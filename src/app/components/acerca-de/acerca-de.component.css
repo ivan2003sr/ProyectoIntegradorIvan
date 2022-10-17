@@ -10,25 +10,20 @@ div{
 /*Estilo foto de perfil*/
 @media (min-width:576px){
     #fotoPerfil{
-        position: absolute;
-        width: 15%;
+        position: relative;
+        width: 90%;
         border-radius: 100%;
         box-shadow: 3px 3px 3px gray;
         left: 3%;
-        top: 600px;
-
     }
 }
 
     @media (max-width:575px){
         #fotoPerfil{
-            position: absolute;
+            position: relative;
             width: 30%;
             border-radius: 100%;
-            box-shadow: 3px 3px 3px gray;
-            left: 33%;
-            top: 600px;
-    
+            box-shadow: 3px 3px 3px gray
         }
     }
 
@@ -36,5 +31,5 @@ div{
 /*etiqueta nombre*/
 #nombre{
     font-weight: bold;
-    margin-top: 30%;
+    
 }
