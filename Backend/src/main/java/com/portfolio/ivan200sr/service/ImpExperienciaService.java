@@ -35,7 +35,7 @@ public class ImpExperienciaService {
         iExperienciaRepo.deleteById(id);
     }
 
-    public boolean existsBtId(int id){
+    public boolean existsById(int id){
         return iExperienciaRepo.existsById(id);
     }
 

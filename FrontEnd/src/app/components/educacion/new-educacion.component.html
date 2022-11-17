@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div>
+            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+
+                <div class="form-group">
+                    <label for="nombreE">Nombre de la instituación</label>
+                    <input type="text" class="form-control" id="nombreEd" name="nombreEd" [(ngModel)]="nombreEd" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcionE">Descripción del trabajo</label>
+                    <input type="text" class="form-control" id="descripcionEd" name="descripcionEd" [(ngModel)]="descripcionEd" required>
+                </div>            
+                <button class="btn btn-primary">Agregar educación</button>
+            </form>
+        </div>
+    </div>
+</div>

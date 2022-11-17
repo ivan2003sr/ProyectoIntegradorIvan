@@ -41,9 +41,9 @@ public class ExperienciaController {
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> uodate(@PathVariable("id") int id, @RequestBody DtoExperiencia dtoExperiencia){
+    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody DtoExperiencia dtoExperiencia){
 
-        if(!impExperienciaService.existsBtId(id))
+        if(!impExperienciaService.existsById(id))
             return new ResponseEntity<>(new Mensaje("El ID no existe"),HttpStatus.BAD_REQUEST);
         if(impExperienciaService.existsByNombreE(dtoExperiencia.getNombreE()) && impExperienciaService.getByNombreE(dtoExperiencia.getNombreE()).get().getId() != id)
             return new ResponseEntity<>(new Mensaje("Esa experiencia ya existe"),HttpStatus.BAD_REQUEST);
@@ -53,15 +53,24 @@ public class ExperienciaController {
         Experiencia experiencia = impExperienciaService.getOne(id).get();
         experiencia.setNombreE(dtoExperiencia.getNombreE());
         experiencia.setDescripcionE(dtoExperiencia.getDescripcionE());
+        impExperienciaService.save(experiencia);
         return new ResponseEntity<>(new Mensaje("Experiencia actualizada"),HttpStatus.OK);
     }
 
-    @DeleteMapping("/borrar/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id){
-        if(!impExperienciaService.existsBtId(id))
+        if(!impExperienciaService.existsById(id))
             return new ResponseEntity<>(new Mensaje("El ID que está intentando borrar, no existe"),HttpStatus.BAD_REQUEST);
         impExperienciaService.delete(id);
         return new ResponseEntity<>(new Mensaje("Experiencia eliminada"),HttpStatus.OK);
+    }
+
+    @GetMapping("/detail/{id}")
+    public ResponseEntity<Experiencia> getById(@PathVariable("id") int id){
+        if(!impExperienciaService.existsById(id))
+            return new ResponseEntity(new Mensaje("no existe"), HttpStatus.NOT_FOUND);
+        Experiencia experiencia = impExperienciaService.getOne(id).get();
+        return new ResponseEntity(experiencia, HttpStatus.OK);
     }
 
 

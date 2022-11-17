@@ -20,6 +20,9 @@ import { LoginComponent } from './components/login/login.component';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { interceptorProvider } from './service/interceptor-service';
 import { NewExperienciaComponent } from './components/experiencia/new-experiencia.component';
+import { EditarExperienciaComponent } from './components/experiencia/editar-experiencia.component';
+import { NewEducacionComponent } from './components/educacion/new-educacion.component';
+import { EditarEducacionComponent } from './components/educacion/editar-educacion.component';
 
 
 @NgModule({
@@ -36,7 +39,11 @@ import { NewExperienciaComponent } from './components/experiencia/new-experienci
     FooterComponent,
     HomeComponent,
     LoginComponent,
-    NewExperienciaComponent
+    NewExperienciaComponent,
+    EditarExperienciaComponent,
+    NewEducacionComponent,
+    EditarEducacionComponent,
+    
   ],
   imports: [
     BrowserModule,

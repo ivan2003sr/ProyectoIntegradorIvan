@@ -27,8 +27,8 @@ export class ImpExperienciaServiceService {
     return this.httpclient.put<any>(this.expURL + `update/${id}`,experiencia)
   }
 
-  public delete(id: number, experiencia: Experiencia): Observable<any>{
-    return this.httpclient.delete<any>(this.expURL + `delete/${id}`)
+  public delete(id: number): Observable<any>{
+    return this.httpclient.delete<any>(this.expURL + `delete/${id}`);
   }
 
 
