@@ -8,8 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class PersonaService {
   URL = 'http://localhost:8080/usuarios/';
-
-
+  //URL='https://bknd-portfolio-ivan.herokuapp.com/usuarios/'
   constructor(private http: HttpClient ) { }
 
   public getPersona(): Observable<persona>{
