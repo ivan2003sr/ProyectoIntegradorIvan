@@ -19,7 +19,8 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/educacion")
-@CrossOrigin(origins = "https://frontend-ivan.web.app")
+//@CrossOrigin(origins = "https://frontend-ivan.web.app")
+@CrossOrigin(origins = "http://localhost:4200")
 public class EducacionController {
     @Autowired
     ImpEducacionService impEducacionService;
