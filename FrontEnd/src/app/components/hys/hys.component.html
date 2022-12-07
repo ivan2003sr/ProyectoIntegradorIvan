@@ -1,25 +1,40 @@
 <div class="row">
     <h1>Hard & Soft skills</h1>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
+    <div class="col-lg-2">
+        <button type="button" routerLink="/newskill" class="btn btn-dark" *ngIf="isLogged">Nueva Skill</button>
+    </div>
+    <div class="text-center col-sm-4 col-md-4 col-lg-4 circulos" *ngFor="let skill of skill">
         <circle-progress
-            [percent]="85" 
-            [radius]="100" 
+            [percent]="(skill.porcentaje)" 
+            [radius]="90" 
+            [imageSrc]="''"
+            [showImage]="false"
+            [imageHeight]="70"
+            [imageWidth]="70"
+            [title]="(skill.nombre)"
             [showUnits]="false"
-            [imageSrc]="'../assets/html.png'"
-            [showImage]="true"
-            [imageHeight]="100"
-            [imageWidth]="100"
-            [title]="'html5'"
+            [titleColor]="'#212F3C'"
+            [showTitle]="true"
             [outerStrokeWidth]="16" 
-            [innerStrokeWidth]="8"
+            [innerStrokeWidth]="2"
             [outerStrokeColor]="'green'" 
             [innerStrokeColor]="'blue'" 
             [animation]="true" 
-            [animationDuration]="700">
+            [animationDuration]="600">
         </circle-progress>
+        <div>
+            <td *ngIf="isLogged">
+                <button class="btn btn-light" routerLink="/editskill/{{skill.id}}">
+                    <i class="bi bi-pen-fill"></i></button>
+            </td>
+            <td *ngIf="isLogged">
+                <button class="btn btn-danger" (click)="delete(skill.id)">
+                    <i class="bi bi-trash-fill"></i> BORRAR </button>
+            </td>
+        </div>
     </div>
 
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
+    <!--div class="text-center col-sm-4 col-md-4 col-lg-4">
         <circle-progress
             [percent]="95" 
             [radius]="100" 
@@ -112,5 +127,5 @@
             [animation]="true" 
             [animationDuration]="700">
         </circle-progress>
-    </div>
+    </div-->
 </div>
