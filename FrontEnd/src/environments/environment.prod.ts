@@ -9,5 +9,5 @@ export const environment = {
     messagingSenderId: '1046086920661',
   },
   production: true,
-  URL: 'https://bknd-portfolio-ivan-herokuapp.com'
+  URL: 'https://mute-ainslee-ivan2003sr.koyeb.app'
 };
